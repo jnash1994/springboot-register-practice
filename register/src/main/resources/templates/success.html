@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>註冊成功</title>
+</head>
+<body th:object="${user}">
+<h3>[[*{username}]]，恭喜你!!註冊成功！</h3>
+<table border="0">
+    <caption>你的註冊訊息為</caption>
+    <tr>
+        <td>用戶名:</td>
+        <td th:text="*{username}"></td>
+    </tr>
+    <tr>
+        <td>密碼:</td>
+        <td th:text="*{password}"></td>
+    </tr>
+    <tr>
+        <td>性别：</td>
+        <td th:text="*{sex} ? '男' : '女'"></td>
+    </tr>
+    <tr>
+        <td>郵件地址：</td>
+        <td th:text="*{email}"></td>
+    </tr>
+    <tr>
+        <td>密碼問題：</td>
+        <td th:text="*{pwdQuestion}"></td>
+    </tr>
+    <tr>
+        <td>密碼答案：</td>
+        <td th:text="*{pwdAnswer}"></td>
+    </tr>
+    <tr>
+        <td>註冊日期：</td>
+        <td th:text="*{#dates.format(regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+    </tr>
+</table>
+</body>
+</html>
