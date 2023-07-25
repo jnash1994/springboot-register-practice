@@ -13,6 +13,7 @@ public class MyWebMvcConfigure implements WebMvcConfigurer {
         InterceptorRegistration registration =
                 registry.addInterceptor(new MyInterceptor());
         // 所以路徑都被攔截
+
         registration.addPathPatterns("/**");
         WebMvcConfigurer.super.addInterceptors(registry);
     }

@@ -1,5 +1,6 @@
 package Nash.example.register.model;
 
+import Nash.example.register.validators.FieldMatch;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @AllArgsConstructor
 @Data
+@FieldMatch(first = "password", second = "confirmPassword", message = "密码和确认密码必须相等")
 public class User {
     private Integer id;
     @NotBlank(message="使用者名稱不能為空")
