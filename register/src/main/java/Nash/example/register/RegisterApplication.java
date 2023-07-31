@@ -6,7 +6,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@ServletComponentScan
+//@ServletComponentScan
 public class RegisterApplication {
 
 	public static void main(String[] args) {

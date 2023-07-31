@@ -20,31 +20,7 @@ public class CompanyController {
         return company;
 
 }
-    @PostMapping("/company")
-    public Company postCompany(@RequestBody Company company){
-        System.out.println(company.getSize());
-        System.out.println(company.getContactPhone());
-        System.out.println(company.getName());
-        return  company;
-    }
-    @GetMapping("/list")
-    public List<Company> returnList(){
-        List<Company> stringList=new ArrayList<>();
-        Company company1=new Company();
-        company1.setName("kkkkkk");
-        company1.setSize(11111);
-        Company company2=new Company();
-        company2.setSize(11111);
-        Company company3=new Company();
-        company3.setContactPhone("笑死電話");
-        stringList.add(company1);
-        stringList.add(company2);
-        stringList.add(company3);
 
-        return stringList;
-
-
-    }
 
 
 

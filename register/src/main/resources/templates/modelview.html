@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">\
+<meta charset="UTF-8">
+<head>
+    <title>Title</title>
+    <style>
+        body{
+        width:600px;
+        }
+        table{
+        border:1px solid black;
+        }
+        table{
+        width:100%
+        }
+        th{
+        height:50px
+        }
+        th,td{
+        border-bottom:1px solid #ddd;
+        text-align:center;
+        }
+        [v-cloak]{
+        display:none;
+        }
+        .even{
+        background-color:#cdcdcd;
+        }
+    </style>
+</head>
+<body>
+<div>Web Application. Passed parameter : <span th:text="${msg}"></span></div>
+<p th:text="${#request.protocol}"></p>
+<p th:text="${#request.method}"></p>
+<p th:text="${#request.requestURL}"></p>
+<a href="https://www.baeldung.com/spring-value-annotation"
+   th:href="@{https://www.hsuanpo.com.tw/}">thymeleaf</a>
+<a href="user.html"
+   th:href="@{/user/h(name='帶上url參數')}">使用者中心</a>
+<table>
+    <caption>員工資訊</caption>
+    <thead>
+    <tr>
+        <th>連絡電話</th>
+        <th>姓名</th>
+        <th>規模</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="com : ${companies}">
+        <td th:text="${com.contactPhone}"></td>
+        <td th:text="${com.name}"></td>
+        <td th:text="${com.size}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <caption>員工資訊</caption>
+    <thead>
+    <tr>
+        <th>連絡電話</th>
+        <th>姓名</th>
+        <th>規模</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="com, status : ${companies}" th:class="${status.even}? 'even' ">
+        <td th:text="${com.contactPhone}"></td>
+        <td th:text="${com.name}"></td>
+        <td th:text="${com.size}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<th:block th:with="msg=${'<b>Spring boot 無難事<b>'}">
+    <p>The message is :[[${msg}]]</p>
+    <p>The message is :[(${msg})]</p>
+</th:block>
+
+<div th:with="boo=true">
+    <th:block th:if="${boo}">
+        使用者名稱 : <input type="text">
+        密碼 : <input type="text">
+    </th:block>
+
+</div>
+
+<!--<th:block th:if="${boo}",th:with="boo=false">-->
+<!--    使用者名稱 : <input type="text">-->
+<!--    密碼 : <input type="text">-->
+<!--</th:block>-->
+
+
+
+
+
+
+</body>
+</html>
