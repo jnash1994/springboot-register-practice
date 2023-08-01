@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>404错误</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>错误发生时请求的URL路径</td>
+            <td th:text="${path}"></td>
+        </tr>
+        <tr>
+            <td>错误发生的时间</td>
+            <td th:text="${timestamp}"></td>
+        </tr>
+        <tr>
+            <td>HTTP状态码</td>
+            <td th:text="${status}"></td>
+        </tr>
+        <tr>
+            <td>错误原因</td>
+            <td th:text="${error}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
