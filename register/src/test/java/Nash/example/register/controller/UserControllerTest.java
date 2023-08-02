@@ -28,7 +28,7 @@ public class UserControllerTest {
 //         mockMvc.perform( requestBuilder).andExpect(MockMvcResultMatchers.status().is(404));
 
       RequestBuilder  requestBuilder2= MockMvcRequestBuilders
-              .post("http://localhost:8080/user/fortest/{id}",3);
+              .post("http://localhost:8080/fortest/{id}",3);
           mockMvc.perform( requestBuilder2)
                   .andExpect(MockMvcResultMatchers.status().is(200))
                   .andExpect(jsonPath("$.name",equalTo("幹")))
